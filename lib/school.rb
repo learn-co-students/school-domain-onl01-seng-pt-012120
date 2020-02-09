@@ -1,24 +1,22 @@
+# require "pry"
+
 class School
   attr_accessor :name, :roster
   def initialize(name)
     @name = name
     @roster = { }
   end
-end
 
-  def name=(name)
-    @name = name
+  def add_student(name, grade)
+    # binding.pry
+    if @roster.key?(grade)
+       @roster[grade] << name
+    else
+      @roster[grade] = [name] 
+    end
+    
+  def grade
+    @roster[grade] = [name]
   end
-  
-  def name
-    @name
   end
-  
-  def roster=(roster)
-    @roster = roster
-  end
-  
-  def roster
-    @roster
-  end
-  
+end
